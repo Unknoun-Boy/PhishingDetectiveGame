@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار مهارات اكتشاف التصيد</title>
+    <link rel="stylesheet" href="quiz-style.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <div class="quiz-header">
+            <h1>🧠 اختبار مهارات اكتشاف التصيد</h1>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressBar"></div>
+            </div>
+            <div class="quiz-info">
+                <span>السؤال <span id="currentQ">1</span> من <span id="totalQ">10</span></span>
+                <span>النقاط: <span id="score">0</span></span>
+            </div>
+        </div>
+        
+        <div class="quiz-content" id="quizContent">
+            <!-- سيتم تحميل الأسئلة هنا بواسطة JavaScript -->
+        </div>
+        
+        <div class="quiz-result" id="quizResult" style="display: none;">
+            <div class="result-content">
+                <div class="result-icon" id="resultIcon"></div>
+                <h2 id="resultTitle"></h2>
+                <p id="resultMessage"></p>
+                <div class="result-stats">
+                    <div class="stat">
+                        <span class="stat-number" id="finalScore">0</span>
+                        <span class="stat-label">النقاط النهائية</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" id="correctAnswers">0</span>
+                        <span class="stat-label">إجابات صحيحة</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" id="accuracy">0</span>
+                        <span class="stat-label">% دقة</span>
+                    </div>
+                </div>
+                <button class="btn btn-primary" onclick="restartQuiz()">إعادة المحاولة</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="quiz-script.js"></script>
+</body>
+</html>
