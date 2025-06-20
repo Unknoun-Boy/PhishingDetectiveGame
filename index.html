@@ -3,58 +3,273 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🛡️ PhishingDetectiveGame - تعلم كيف تحمي نفسك من التصيد</title>
-    <link rel="stylesheet" href="main-style.css">
+    <title>🛡️ PhishingDetectiveGame - احم نفسك من التصيد</title>
+    <link rel="stylesheet" href="modern-style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="warning-header">
-        <h1>⚠️ تحذير تعليمي</h1>
-        <p>هذا موقع تعليمي لتعلم كيفية اكتشاف صفحات التصيد - جميع البيانات وهمية</p>
-    </div>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>PhishingDetective</span>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link">الرئيسية</a>
+                <a href="#demo" class="nav-link">التجربة</a>
+                <a href="#learn" class="nav-link">تعلم</a>
+                <a href="#stats" class="nav-link">إحصائيات</a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-    <div class="hero-section">
-        <h1>🛡️ PhishingDetectiveGame</h1>
-        <p>تعلم كيف تحمي نفسك من التصيد الإلكتروني</p>
+    <!-- Hero Section with Parallax -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="animated-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+            </div>
+        </div>
         
-        <div class="demo-cards">
-            <div class="card">
-                <img src="Instagram-Icon.jpg" alt="Instagram">
-                <h3>محاكاة Instagram</h3>
-                <p>جرب صفحة Instagram المزيفة وتعلم كيفية اكتشافها</p>
-                <a href="login.html" class="btn">ابدأ التجربة</a>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="gradient-text">🛡️ احم نفسك</span>
+                    <span class="typing-text" id="typingText"></span>
+                </h1>
+                <p class="hero-subtitle">
+                    تعلم كيفية اكتشاف مواقع التصيد من خلال تجربة تفاعلية آمنة ومحاكاة واقعية
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="startDemo()">
+                        <i class="fas fa-play"></i>
+                        ابدأ التجربة
+                    </button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('learn')">
+                        <i class="fas fa-book"></i>
+                        تعلم المزيد
+                    </button>
+                </div>
             </div>
             
-            <div class="card">
-                <img src="Facebook-logo.jpg" alt="Facebook">
-                <h3>محاكاة Facebook</h3>
-                <p>استكشف صفحة Facebook المزيفة وتعلم علامات الخطر</p>
-                <a href="facebook-login.html" class="btn">ابدأ التجربة</a>
+            <div class="hero-visual">
+                <div class="phone-mockup">
+                    <div class="phone-screen">
+                        <div class="fake-instagram">
+                            <div class="ig-header"></div>
+                            <div class="ig-content">
+                                <div class="warning-pulse">⚠️</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Interactive Demo Section -->
+    <section class="demo-section" id="demo">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-desktop"></i>
+                جرب المحاكاة التفاعلية
+            </h2>
+            
+            <div class="demo-grid">
+                <div class="demo-card instagram-card" data-platform="instagram">
+                    <div class="card-header">
+                        <img src="Instagram-Icon.jpg" alt="Instagram" class="platform-icon">
+                        <h3>محاكاة Instagram</h3>
+                        <div class="difficulty easy">سهل</div>
+                    </div>
+                    <div class="card-content">
+                        <p>اكتشف صفحة Instagram المزيفة وتعلم علامات الخطر</p>
+                        <div class="features">
+                            <span class="feature">📱 تصميم متجاوب</span>
+                            <span class="feature">🔍 علامات واضحة</span>
+                            <span class="feature">💡 نصائح فورية</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="demo-btn" onclick="openDemo('instagram')">
+                            <span>جرب الآن</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                    </div>
+                    <div class="card-glow"></div>
+                </div>
+
+                <div class="demo-card facebook-card" data-platform="facebook">
+                    <div class="card-header">
+                        <img src="Facebook-logo.jpg" alt="Facebook" class="platform-icon">
+                        <h3>محاكاة Facebook</h3>
+                        <div class="difficulty medium">متوسط</div>
+                    </div>
+                    <div class="card-content">
+                        <p>استكشف تقنيات التصيد المتقدمة في صفحة Facebook</p>
+                        <div class="features">
+                            <span class="feature">🎭 خداع بصري</span>
+                            <span class="feature">🔐 تحليل الأمان</span>
+                            <span class="feature">📊 تقرير مفصل</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="demo-btn" onclick="openDemo('facebook')">
+                            <span>جرب الآن</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                    </div>
+                    <div class="card-glow"></div>
+                </div>
+
+                <div class="demo-card quiz-card" data-platform="quiz">
+                    <div class="card-header">
+                        <i class="fas fa-brain platform-icon"></i>
+                        <h3>اختبار الذكاء</h3>
+                        <div class="difficulty hard">صعب</div>
+                    </div>
+                    <div class="card-content">
+                        <p>اختبر مهاراتك في اكتشاف التصيد مع تحديات متنوعة</p>
+                        <div class="features">
+                            <span class="feature">🏆 نظام نقاط</span>
+                            <span class="feature">📈 تتبع التقدم</span>
+                            <span class="feature">🎯 تحديات يومية</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="demo-btn" onclick="openDemo('quiz')">
+                            <span>ابدأ الاختبار</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                    </div>
+                    <div class="card-glow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Section with Interactive Elements -->
+    <section class="learning-section" id="learn">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-graduation-cap"></i>
+                تعلم كيفية الحماية
+            </h2>
+            
+            <div class="learning-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="basics">الأساسيات</button>
+                    <button class="tab-btn" data-tab="advanced">متقدم</button>
+                    <button class="tab-btn" data-tab="tools">الأدوات</button>
+                </div>
+                
+                <div class="tab-content">
+                    <div class="tab-panel active" id="basics">
+                        <div class="learning-grid">
+                            <div class="learning-card">
+                                <div class="card-icon">🔍</div>
+                                <h3>فحص الروابط</h3>
+                                <p>تعلم كيفية التمييز بين الروابط الآمنة والمشبوهة</p>
+                                <div class="example">
+                                    <div class="url-example bad">❌ instagramm-security.com</div>
+                                    <div class="url-example good">✅ instagram.com</div>
+                                </div>
+                            </div>
+                            
+                            <div class="learning-card">
+                                <div class="card-icon">🔒</div>
+                                <h3>شهادات الأمان</h3>
+                                <p>افهم علامات الأمان الصحيحة في المتصفح</p>
+                                <div class="ssl-demo">
+                                    <div class="ssl-indicator secure">
+                                        <i class="fas fa-lock"></i> آمن
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="learning-card">
+                                <div class="card-icon">⚠️</div>
+                                <h3>علامات التحذير</h3>
+                                <p>اكتشف السلوكيات المشبوهة في المواقع</p>
+                                <ul class="warning-list">
+                                    <li>ضغط زمني مفتعل</li>
+                                    <li>أخطاء إملائية</li>
+                                    <li>طلب معلومات إضافية</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section with Animated Counters -->
+    <section class="stats-section" id="stats">
+        <div class="container">
+            <h2 class="section-title white">
+                <i class="fas fa-chart-line"></i>
+                إحصائيات مهمة
+            </h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">📧</div>
+                    <div class="stat-number" data-target="75">0</div>
+                    <div class="stat-label">% زيادة في هجمات التصيد</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">🔒</div>
+                    <div class="stat-number" data-target="58">0</div>
+                    <div class="stat-label">% من المواقع المزيفة تستخدم HTTPS</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">🛡️</div>
+                    <div class="stat-number" data-target="92">0</div>
+                    <div class="stat-label">% نسبة الحماية بالتدريب</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-number" data-target="1500">0</div>
+                    <div class="stat-label">+ مستخدم تم تدريبهم</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Modal -->
+    <div class="modal" id="demoModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">تجربة تفاعلية</h3>
+                <button class="modal-close" onclick="closeModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <iframe id="demoFrame" src="" frameborder="0"></iframe>
             </div>
         </div>
     </div>
 
-    <div class="educational-content">
-        <h2>🎯 ما ستتعلمه هنا؟</h2>
-        <div class="tips-grid">
-            <div class="tip">
-                <h4>🔍 فحص الروابط</h4>
-                <p>تعلم كيفية التمييز بين الروابط الأصلية والمزيفة</p>
-            </div>
-            <div class="tip">
-                <h4>🔒 التحقق من الأمان</h4>
-                <p>فهم علامات الأمان الصحيحة في المتصفح</p>
-            </div>
-            <div class="tip">
-                <h4>⚠️ اكتشاف التحذيرات</h4>
-                <p>تمييز السلوكيات المشبوهة في المواقع</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="footer">
-        <p>🛡️ مشروع تعليمي - لا تدخل بياناتك الحقيقية</p>
-    </div>
-
-    <script src="educational-script.js"></script>
+    <!-- Scripts -->
+    <script src="modern-script.js"></script>
 </body>
 </html>
